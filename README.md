@@ -1,6 +1,1 @@
-# ohtu-viikko1
-ohtu2016
-
-<!-- change -->
-<!--- ihan hyvä muutos --->
-
+[![Build Status](https://travis-ci.org/mluukkai/ohtutesti16.svg?branch=master)](https://travis-ci.org/mluukkai/ohtutesti16)
