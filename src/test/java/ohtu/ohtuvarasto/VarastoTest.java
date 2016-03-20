@@ -54,6 +54,38 @@ public class VarastoTest {
 
         assertEquals(2, saatuMaara, vertailuTarkkuus);
     }
+    
+    @Test
+    public void varastoonEiVoiLisataNegatiivisia() {
+        varasto.lisaaVarastoon(-99);
+        assertEquals(0, varasto.getSaldo(), vertailuTarkkuus);
+    }
+    
+    @Test
+    public void josLisataanSopivastiNiinToimii() {
+        varasto.lisaaVarastoon(3);
+        assertEquals(3, varasto.getSaldo(), vertailuTarkkuus);
+    }
+    
+    @Test
+    public void yliTilavuudenEiMeneVarastoon() {
+        varasto.lisaaVarastoon(100);
+        assertEquals(10, varasto.getSaldo(), vertailuTarkkuus);
+    }
+    
+    @Test
+    public void eiVoiOttaaNegatiivistaJaPalaaNollaPisteNolla() {
+        varasto.lisaaVarastoon(3);
+        varasto.otaVarastosta(-5);
+        assertEquals(0.0, varasto.otaVarastosta(-5), vertailuTarkkuus);
+        assertEquals(3, varasto.getSaldo(), vertailuTarkkuus);
+    }
+    
+    @Test
+    public void josOtetaanYliSaldonSaadaanSaldo() {
+        varasto.lisaaVarastoon(5);
+        assertEquals(5.0, varasto.otaVarastosta(7), vertailuTarkkuus);
+    }
 
     @Test
     public void ottaminenLisääTilaa() {
