@@ -84,7 +84,8 @@ public class VarastoTest {
     @Test
     public void josOtetaanYliSaldonSaadaanSaldo() {
         varasto.lisaaVarastoon(5);
-        assertEquals(5.0, varasto.otaVarastosta(7), vertailuTarkkuus);
+//        assertEquals(5.0, varasto.otaVarastosta(7), vertailuTarkkuus);
+        assertEquals(599999.0, varasto.otaVarastosta(7), vertailuTarkkuus);
     }
 
     @Test
